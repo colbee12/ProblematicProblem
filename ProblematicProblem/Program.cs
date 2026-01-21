@@ -11,7 +11,7 @@ namespace ProblematicProblem
     class program
     {
       
-static bool cont = true;
+
 
 private static List<string> activities = new List<string>()
     { "Movies", "Paintball", "Bowling", "Lazer Tag", "LAN Party", "Hiking", "Axe Throwing", "Wine Tasting" };
@@ -62,7 +62,7 @@ private static List<string> activities = new List<string>()
             }
             Console.WriteLine();
             Console.WriteLine("Would you like to add more? yes/no: ");
-            addToList = bool.Parse(Console.ReadLine());
+            addToList = (Console.ReadLine().ToLower() == "yes")? true : false;
         }
     }
 
@@ -88,7 +88,7 @@ private static List<string> activities = new List<string>()
                 
                 string randomActivity = activities[randomNumber]; 
                 
-                if (userAge > 21 && randomActivity == "Wine Tasting")
+                if (userAge < 21 && randomActivity == "Wine Tasting")
         {
             Console.WriteLine($"Oh no! Looks like you are too young to do {randomActivity}");
             Console.WriteLine("Pick something else!");
